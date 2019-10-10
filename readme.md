@@ -11,3 +11,6 @@ Data Source URL: https://web.stanford.edu/~hastie/ElemStatLearn/data.html
 Training Observation: 7291, Test Observation: 2007
 Each observation contains a 16x16 (256 pixel) input feature.
 Each observation contains an output id (0-9) of a digit.
+
+# Project Proposal Link:
+https://github.com/iShafkat/CS_599_Project-01/blob/master/Project_Week01.pdf
