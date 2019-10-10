@@ -14,3 +14,7 @@ Each observation contains an output id (0-9) of a digit.
 
 # Project Proposal Link:
 https://github.com/iShafkat/CS_599_Project-01/blob/master/Project_Week01.pdf
+
+
+# Figure:
+![image](https://github.com/iShafkat/CS_599_Project-01/blob/master/figure1.JPG)
