@@ -6,14 +6,11 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
-
 # Read the Dataset
 train_array = np.loadtxt("zip.train")
 train_data = pd.DataFrame(train_array)
 test_array = np.loadtxt("zip.test")
 test_data = pd.DataFrame(test_array)
-
 #Neural Network Architecture
 class Net(nn.Module):
 
