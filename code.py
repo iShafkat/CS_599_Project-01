@@ -25,7 +25,8 @@ def main():
     accuracy_three =network_three(X,y,test_label1,test_array)                 # Calls network three
     accuracy_four =network_four(X,y,test_label1,test_array)                   # Calls network four
     accuracy_five =network_five(X,y,test_label1,test_array)                   # Calls network five
-    t = np.arange(0., 30., 1)
+# The following codes prodeuces the output curve
+    t = np.arange(0., 30., 1)                                                 
     plt.xlabel("Training Epochs")
     plt.ylabel("%Correct On Test Data")
     plt.plot(t, accuracy_one, 'r', label ='Network One')
@@ -40,13 +41,14 @@ def main():
 def network_one(X,y,test_label1,test_array):
     accuracy_one, epoch =[],1
     model = Sequential()
-    model.add(Dense(10, input_dim=256, activation='tanh'))
-    model.compile(loss=losses.mean_squared_error, optimizer='sgd', metrics=['accuracy'])
+    model.add(Dense(10, input_dim=256, activation='tanh'))        # Defines a layer
+    model.compile(loss=losses.mean_squared_error, optimizer='sgd', metrics=['accuracy'])   # Compiles the network
     while epoch<31:
-        model.fit(X, y, epochs=epoch, batch_size=10)
-        _, accuracy = model.evaluate(X, y)
-        predictions = model.predict_classes(test_array)
+        model.fit(X, y, epochs=epoch, batch_size=10)         # Trains the network
+        _, accuracy = model.evaluate(X, y)                   # Training Accuracy is measured
+        predictions = model.predict_classes(test_array)      # The network Predicts the output of the test data set
         correct =0
+# Finds the accuracy of the network for test data
         for i in range(len(predictions)):
             if predictions[i]==test_label1[i]:
                 correct +=1
