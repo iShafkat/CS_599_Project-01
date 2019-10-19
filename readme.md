@@ -20,4 +20,6 @@ https://github.com/iShafkat/CS_599_Project-01/blob/master/Project_Week01.pdf
 
 # Figure:
 ![image](https://github.com/iShafkat/CS_599_Project-01/blob/master/figure1.JPG)
+
+Figure: Original figure of the project
 Figure Reference: Hastie, et al. Elements of Statistical Learning, Figure 11.11.
