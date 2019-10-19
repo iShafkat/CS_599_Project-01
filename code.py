@@ -1,4 +1,4 @@
-# This code is creates five different neural networks and analyzes each of their performances in classifying hand written digits.
+# This code creates five different neural networks and analyzes each of their performances in classifying hand written digits.
 
 #import libraries
 from numpy import loadtxt
