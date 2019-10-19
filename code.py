@@ -9,23 +9,22 @@ from keras import losses
 from keras.layers import LocallyConnected1D, LocallyConnected2D, Conv2D
 import matplotlib.pyplot as plt
 import numpy as np
+
 # This is the main Function. It calls each of the neural networks and plots the output curve.It also processes the data set. 
 def main():
-    # Load the Training Dataset
-    dataset = loadtxt('zip.train')  
-    X = dataset[:,1:257]
-    y = dataset[:,0:1]
-    y = to_categorical(y)
-    #load the Test Dataset
-    test_array = loadtxt("zip.test")
-    test_label1 = test_array[:,0:1]
-    test_array = test_array[:,1:257]
-    test_label = to_categorical(test_label1)
-    accuracy_one =network_one(X,y,test_label1,test_array)
-    accuracy_two =network_two(X,y,test_label1,test_array)
-    accuracy_three =network_three(X,y,test_label1,test_array)
-    accuracy_four =network_four(X,y,test_label1,test_array)
-    accuracy_five =network_five(X,y,test_label1,test_array)
+    dataset = loadtxt('zip.train')         # Load the training Dataset
+    X = dataset[:,1:257]                   # This commands stores the input features of each observation
+    y = dataset[:,0:1]                     # This command stores the input labels of each observation
+    y = to_categorical(y)                  # Categorizes the training labels     
+    test_array = loadtxt("zip.test")       # load the Test Dataset
+    test_label1 = test_array[:,0:1]        # This commands stores the input labels of each observation
+    test_array = test_array[:,1:257]       # This commands stores the input features of each observation
+    test_label = to_categorical(test_label1)                                  # Categorizes the training labels
+    accuracy_one =network_one(X,y,test_label1,test_array)                     # Calls network one
+    accuracy_two =network_two(X,y,test_label1,test_array)                     # Calls network two
+    accuracy_three =network_three(X,y,test_label1,test_array)                 # Calls network three
+    accuracy_four =network_four(X,y,test_label1,test_array)                   # Calls network four
+    accuracy_five =network_five(X,y,test_label1,test_array)                   # Calls network five
     t = np.arange(0., 30., 1)
     plt.xlabel("Training Epochs")
     plt.ylabel("%Correct On Test Data")
@@ -157,6 +156,7 @@ def network_five(X,y,test_label1,test_array):
         accuracy_five.append(accuracy)
         epoch +=1
     return accuracy_five
+
 # This calls the main function
 if __name__ == '__main__':
     main()
