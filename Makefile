@@ -1,1 +1,2 @@
-python code.py
+# makefile
+# install python 2.6
