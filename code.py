@@ -1,6 +1,6 @@
 # This code creates five different neural networks and analyzes each of their performances in classifying hand written digits.
 
-#import libraries
+# The following codes import libraries
 from numpy import loadtxt
 from keras.models import Sequential
 from keras.layers import Dense, Flatten
@@ -9,7 +9,7 @@ from keras import losses
 from keras.layers import LocallyConnected1D, LocallyConnected2D, Conv2D
 import matplotlib.pyplot as plt
 import numpy as np
-
+# This is the main Function. It calls each of the neural networks and plots the output curve.It also processes the data set. 
 def main():
     # Load the Training Dataset
     dataset = loadtxt('zip.train')  
@@ -36,6 +36,8 @@ def main():
     plt.plot(t, accuracy_five, 'black', label ='Network Five')
     plt.legend()
     plt.show()
+    
+# This function implements the network with No hidden layer
 def network_one(X,y,test_label1,test_array):
     accuracy_one, epoch =[],1
     model = Sequential()
@@ -55,6 +57,8 @@ def network_one(X,y,test_label1,test_array):
         accuracy_one.append(accuracy)
         epoch +=1
     return accuracy_one
+
+# This function implements the network with One hidden layer
 def network_two(X,y,test_label1,test_array):
     accuracy_two, epoch =[],1
     model = Sequential()
@@ -75,6 +79,8 @@ def network_two(X,y,test_label1,test_array):
         accuracy_two.append(accuracy)
         epoch +=1
     return accuracy_two
+
+# This function implements the network with Two hidden layers locally connected
 def network_three(X,y,test_label1,test_array):
     accuracy_three, epoch =[],1
     model = Sequential()
@@ -99,6 +105,8 @@ def network_three(X,y,test_label1,test_array):
         accuracy_three.append(accuracy)
         epoch +=1
     return accuracy_three
+
+# This function implements the network with Two hidden layers, locally connected with weight sharing
 def network_four(X,y,test_label1,test_array):
     accuracy_four, epoch =[],1
     model = Sequential()
@@ -123,6 +131,8 @@ def network_four(X,y,test_label1,test_array):
         accuracy_four.append(accuracy)
         epoch +=1
     return accuracy_four
+
+# This function implements the network with Two hidden layers, locally connected, two levels of weight sharing
 def network_five(X,y,test_label1,test_array):
     accuracy_five, epoch =[],1
     model = Sequential()
@@ -147,5 +157,6 @@ def network_five(X,y,test_label1,test_array):
         accuracy_five.append(accuracy)
         epoch +=1
     return accuracy_five
+# This calls the main function
 if __name__ == '__main__':
     main()
