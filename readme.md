@@ -2,7 +2,7 @@
 Neural Network Based Digit Classifier
 # How to Run the Code
 Download/clone the repository to the local machine and run the Makefile. The local machine should contain the following software:
-python version 3.6 or above.
+python version 3.6 or above, keras , numpy and matplotlib.
 # Description
 This project is to reproduce the following figure(in the below section named Figure).
 In this classification project, the neural network will classify the ZIP code Dataset into 10 different digit classes. There would be two phase, one is training phase and the other one would be testing phase. We will consider 5 different neural network architectures and compare their performances. For each of the neural network architecture, the size of epoch in training would be varied and the corresponding testing error would be calculated. Based on this data, the figure would be plotted for 5 different architecture.
